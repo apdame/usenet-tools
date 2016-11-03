@@ -13,6 +13,8 @@ from collections import Counter
 address = []
 
 mbox = mailbox.mbox(raw_input("What is the mailbox you want to work with? "))
+csvf = raw_input("What is the name of the csv file it should output to? ")
+
 print "Reading File..."
 
 for message in mbox:
