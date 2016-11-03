@@ -1,6 +1,6 @@
 # usenet-tools
-All scripts are written in Python 2.7. I've included short descriptions of each script below, to give an idea of their functions and any existing bugs. I'll be adding more scripts as I successfuly write/debug them. I've focused on making the scripts fairly simple and able to run entirely through the command line, so one doesn't need a deep knowledge of Python to use them.
+All scripts are written in Python 2.7. I've included short descriptions of each module below, to give an idea of their functions and any existing bugs. I'll be adding more scripts as I successfuly write/debug them. I've focused on making the scripts fairly simple and able to run entirely through the command line, so one doesn't need a deep knowledge of Python to use them.
 
-* addresscounter.py - Collects poster addresses from the file and counts number of occurrances in the archive. I suggest running the .csv through a plain text editor to remove all the whitespace after you have your oputput - because .mbox data comes out NoneType, .strip() doesn't always work as it should. I'm still working on a solution for this.
+* from_edit.py - *Before you use any of these other modules, you'll want to run this one.* Workaround for issue with Python mailbox module mis-reading Usenet Historical Collection mbox files. Identifies all instances of "from" that are *not* in the header, changes them to "xFrom," and writes them to a new mailbox. Otherwise, message will falsely detect any instance of "\nFrom " as the start of a new message. Blog post on this issue forthcoming.
 
-
+* addresscounter.py - Collects poster addresses from the file and counts number of occurrances in the archive. You may want to run the .csv through a plain text editor to remove all the whitespace after you have your output - because .mbox data comes out NoneType, .join() and .strip() doesn't always work as they should. I'm still working on a solution for this.
