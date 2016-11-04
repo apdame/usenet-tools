@@ -29,8 +29,7 @@ for message in mbox:
 print "Writing To File..."
 
 with open(csvf, 'wb') as csv_file:
-    writer = csv.writer(csv_file, delimiter=' ',
-                          quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    writer = csv.writer(csv_file, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
     writer.writerow(["Message ID"] + ["Newsgroups"])
     for key, value in crosspost.iteritems():
         #writes row with Message ID and
