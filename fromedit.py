@@ -13,7 +13,7 @@ newbox = raw_input("What is the name of the file it should output to? ")
 with open(box, 'rb') as original, open(newbox, 'wb') as new:
     for line in original:
         if "From " in line:
-            num = line[-2]
+            num = line[6]
             #Checks to see if is added Google Groups header
             if num.isdigit() is True:
                 #Skips edit if True
