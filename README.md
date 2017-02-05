@@ -5,6 +5,8 @@ I'll be adding more scripts as I successfuly write/debug them. I've focused on m
 
 * fromedit.py - *Before you use any of these other modules, you'll want to run this one.* Workaround for issue with Python mailbox module mis-reading Usenet Historical Collection mbox files, which I discuss in detail [here](http://mith.umd.edu/listening-for-the-static/). Identifies all instances of "from" that are *not* in the header, changes them to "xFrom," and writes them to a new file. Otherwise, message will falsely detect any instance of "\nFrom " as the start of a new message.
 
+* msgprinter.py - Prints out each message from a Usenet Collection into individual .txt files, labeled via prefix + number. This may make Usenet collections easier to work with in analysis programs like NVivo (since you can isolate single messages). As part of this process, this script reverts the changes made by fromedit.py.
+
 * addresscounter.py - Collects poster addresses from the given newsgroup archive and counts number of occurrances in the archive. You may want to run the .csv through a plain text editor to remove all the whitespace after you have your output - because .mbox data comes out NoneType, .join() and .strip() doesn't always work as they should. I'm still working on a solution for this.
 
 * crosspost.py - Culls the unique Message IDs and Newsgroup listings for the given newsgroup archive, alphabetizes newsgroup list, then stores them in a dictionary. Dictionary inputs to .csv for analysis. To get the lists as they appear in the archive, comment out (#) the sorted() and .join() lines.
